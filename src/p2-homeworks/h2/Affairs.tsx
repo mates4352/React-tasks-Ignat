@@ -1,36 +1,36 @@
 import React from 'react'
 import Affair from './Affair'
-import {AffairType} from './HW2'
+import {AffairType, defaultAffairsType, FilterType} from './HW2'
 
 type AffairsPropsType = { // need to fix any
-    data: any
+    data: Array<defaultAffairsType>
     setFilter: any
-    deleteAffairCallback: any
+    deleteAffairCallback: (_id: number) => void
 }
 
 function Affairs(props: AffairsPropsType) {
     const mappedAffairs = props.data.map((a: AffairType) => (
         <Affair // should work
             key={a._id} // кеи ОБЯЗАТЕЛЬНЫ в 99% - так что лучше их писать всегда при создании компонент в мапе
-            affair={a}
+            _id={a._id}
+            affair={props.data}
             deleteAffairCallback={props.deleteAffairCallback}
         />
     ))
 
-    const setAll = () => {} // need to fix
-    const setHigh = () => {}
-    const setMiddle = () => {}
-    const setLow = () => {}
+   function setFilterPriority(priority: FilterType) {
+      props.setFilter(priority)
+   }
 
     return (
         <div>
 
             {mappedAffairs}
 
-            <button onClick={setAll}>All</button>
-            <button onClick={setHigh}>High</button>
-            <button onClick={setMiddle}>Middle</button>
-            <button onClick={setLow}>Low</button>
+            <button onClick={() => setFilterPriority('all')}>All</button>
+            <button onClick={() => setFilterPriority('high')}>High</button>
+            <button onClick={() => setFilterPriority('middle')}>Middle</button>
+            <button onClick={() => setFilterPriority('low')}>Low</button>
         </div>
     )
 }

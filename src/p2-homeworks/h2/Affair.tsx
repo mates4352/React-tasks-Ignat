@@ -1,21 +1,25 @@
 import React from 'react'
+import {defaultAffairsType} from "./HW2";
 
 type AffairPropsType = {
-    // key не нужно типизировать
-    affair: any // need to fix any
-    deleteAffairCallback: any // need to fix any
+   // key не нужно типизировать
+   _id: number
+   affair: Array<defaultAffairsType>// need to fix any
+   deleteAffairCallback: (_id: number) => void // need to fix any
 }
 
 function Affair(props: AffairPropsType) {
-    const deleteCallback = () => {}// need to fix
+   const deleteCallback = (_id: number) => {
+      props.deleteAffairCallback(_id)
+   }// need to fix
 
-    return (
-        <div>
-            // show some text
+   return (
+       <div>
+          // show some text
 
-            <button onClick={deleteCallback}>X</button>
-        </div>
-    )
+          <button onClick={()=> deleteCallback(props._id)}>X</button>
+       </div>
+   )
 }
 
 export default Affair
