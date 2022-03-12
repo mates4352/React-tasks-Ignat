@@ -4,7 +4,7 @@ import {defaultAffairsType} from "./HW2";
 type AffairPropsType = {
    // key не нужно типизировать
    _id: number
-   affair: Array<defaultAffairsType>// need to fix any
+   affair: defaultAffairsType[]// need to fix any
    deleteAffairCallback: (_id: number) => void // need to fix any
 }
 

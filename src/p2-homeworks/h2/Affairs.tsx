@@ -1,10 +1,10 @@
-import React from 'react'
+import React, {Dispatch, SetStateAction} from 'react'
 import Affair from './Affair'
 import {AffairType, defaultAffairsType, FilterType} from './HW2'
 
 type AffairsPropsType = { // need to fix any
-    data: Array<defaultAffairsType>
-    setFilter: any
+    data: defaultAffairsType[]
+    setFilter: Dispatch<SetStateAction<FilterType>>
     deleteAffairCallback: (_id: number) => void
 }
 
