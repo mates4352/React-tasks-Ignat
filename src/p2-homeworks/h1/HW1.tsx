@@ -2,7 +2,14 @@ import React from 'react'
 import AlternativeMessage from "./AlternativeMessage";
 import Message from "./Message";
 
-const messageData = {
+type messageDateType = {
+   avatar: string
+   name: string
+   message: string
+   time: string
+}
+
+const messageData:messageDateType = {
    avatar: 'https://sun9-74.userapi.com/Ph-WiuOtF985il9AvN9JqiCWedmHtSGSSTXrSA/ltEB2Z2-YO4.jpg',
    name: 'Some Name',
    message: 'some text',

@@ -8,8 +8,8 @@ export const PATH = {
 function Pages() {
     return (
         <div>
-            {/*Routes выбирает первый подходящий роут*/}
-            {/*<Routes>*/}
+            {/*RoutesLink выбирает первый подходящий роут*/}
+            {/*<RoutesLink>*/}
 
                 {/*в начале мы попадаем на страницу '/' и переходим сразу на страницу PRE_JUNIOR*/}
                 {/*<Route path={'/'} element={<Navigate to={PATH.PRE_JUNIOR}/>}/>*/}
@@ -20,7 +20,7 @@ function Pages() {
                 {/*он отрисуется если пользователь захочет попасть на несуществующую страницу*/}
                 {/*<Route path={'/*'} element={<Error404/>}/>*/}
 
-            {/*</Routes>*/}
+            {/*</RoutesLink>*/}
         </div>
     )
 }
