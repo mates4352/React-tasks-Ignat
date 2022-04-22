@@ -65,5 +65,5 @@ test('check age 18', () => {
     ])
     expect(initialState).not.toBe(newState)
     expect(newState.length).toBe(4)
-    expect(newState.find(item => item.age === 18)).toBeUndefined()
+    expect(newState.find(item => item.age <= 18)).toBeUndefined()
 })
