@@ -1,14 +1,22 @@
 import React from 'react'
 import SuperButton from '../h4/common/c2-SuperButton/SuperButton'
+import {useDispatch, useSelector} from "react-redux";
+import {stateType} from "../../bll/redux-store";
+import {changeLoading} from "../../bll/reducers/loading-reducer";
 
 function HW10() {
+   const state = useSelector<stateType, stateType>((state) => state);
+   const dispatch = useDispatch();
     // useSelector, useDispatch
-    const loading = false
+    const loading = state.loading.isLoading;
 
     const setLoading = () => {
+       dispatch(changeLoading(!loading))
         // dispatch
+         setTimeout(() => {
+            dispatch(changeLoading(false))
+         }, 2000)
         // setTimeout
-        console.log('loading...')
     };
 
     return (
